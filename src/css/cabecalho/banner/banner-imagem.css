@@ -1,0 +1,23 @@
+.banner__imagem {
+background-image: url('../../../assets/imagens/banner-cabecalho.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: calc(100vh - 20rem);
+width: 100%;   
+
+}
+
+
+
+@media screen and (min-width: 0) {
+    .banner__imagem {
+        height: calc(100vh - 30rem);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner__imagem {
+        height: calc(100vh - 20rem);
+    }
+}

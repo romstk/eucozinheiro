@@ -1,0 +1,24 @@
+.filosofia{
+    background-color: rgb(251, 243, 235);
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+
+@media screen and (min-width: 0) {
+    .filosofia {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+}
+
+
+@media screen and (min-width: 768px) {
+    .filosofia {
+        flex-direction: row;
+        padding: 5rem 0 5rem 5rem ;
+    }
+    
+}

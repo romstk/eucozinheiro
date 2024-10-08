@@ -1,0 +1,20 @@
+.filosofia__lista {
+    list-style:square;
+    padding: 3rem;
+}
+
+
+@media screen and (min-width: 0){
+    .filosofia__lista{
+        font-size: 1.5rem;
+    }
+
+}
+
+
+@media screen and (min-width: 768px){
+    .filosofia__lista{
+        font-size: 2.5rem;
+    }
+    
+}
