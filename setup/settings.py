@@ -33,7 +33,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eucozinheiro.com.br', 'www.eucozinheiro.com.br']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'receitas',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
