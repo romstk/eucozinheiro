@@ -1,0 +1,25 @@
+.banner__subtitulo{
+    font-family: 'Pacifico', cursive;
+    color: #fdfdfd;
+    position: absolute; /*Absoluta em relação ao pai que é o banner*/
+    left: 50%;
+    top: 60%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    width: 100%;
+
+}
+
+@media screen and (min-width: 0) {
+    .banner__subtitulo {
+        font-size: 2rem;
+        transform: translate(-50%, -20%);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner__subtitulo {
+        font-size: 3rem;
+        transform: translate(-50%, 60%);
+    }
+}

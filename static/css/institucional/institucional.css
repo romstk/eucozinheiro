@@ -1,0 +1,22 @@
+.institucional {
+    display: flex;
+    
+}
+
+@media screen and (min-width: 0) {
+    .institucional {
+        flex-direction: column;
+        padding: 0rem;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .institucional {
+        align-items: center;
+        flex-direction: row;
+        padding: 5rem;
+        gap: 2rem;
+    }
+    
+}

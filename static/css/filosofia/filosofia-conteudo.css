@@ -1,0 +1,7 @@
+.filosofia__conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding: 5rem;
+}

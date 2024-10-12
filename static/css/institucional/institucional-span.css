@@ -1,0 +1,19 @@
+.institucional__span { 
+    color: #595959;
+    margin-top: 5rem;
+    font-weight:bold
+    
+}
+
+@media screen and (min-width: 0) {
+    .institucional__span {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .institucional__span {
+        font-size: 2rem;
+    }
+}

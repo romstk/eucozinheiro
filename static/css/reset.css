@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   MODIFICADO    
+*/
+/*
+    O padrão de 1rem dos navegadores é 16px. 
+    Definido padrão do site para para os elementos html para 10px,  trabalhando em todo o site com este medida para representar 1rem e facilitar a atribuição aos demais componentes sem necessiddade de cálculos adicionais, considerando o padrão de 1rem=10px
+    usando para os demais elementos a artibuição a font-size a medida em rem proporcional a necessidade, considerando que todos os elementos que utilizam rem como medida se reportarão ao tamanho padrão dos elementos html.
+*/
+
+html {
+    font-size: 10px;    
+}
+    
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, ul, li,
+article, aside, footer, header, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;    
+    /*font: inherit;*/
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+/* Fim Eric Meyer reset */

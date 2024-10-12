@@ -1,0 +1,23 @@
+.institucional__banner { 
+    background-image: url('../../assets/imagens/banner-institucional.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+@media screen and (min-width: 0) {
+    .institucional__banner {
+        height: calc(100vh - 30rem);
+        order: -1;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .institucional__banner{
+        height: calc(100vh - 30rem);
+        order: 1;
+        width: 50%;
+    }
+}

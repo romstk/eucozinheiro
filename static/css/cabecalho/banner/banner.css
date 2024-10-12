@@ -1,0 +1,3 @@
+.banner {
+    position: relative; /*Define relativo para que os filhos sejam posicionados em relação a eles, por isso colocamos relative no pai para gerar um contexto para os filhos*/
+}

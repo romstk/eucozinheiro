@@ -1,0 +1,24 @@
+.filosofia__banner {
+    background-image: url('../../assets/imagens/banner-filosofia.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+
+@media screen and (min-width: 0) {
+    .filosofia__banner {
+        height: calc(100vh - 30rem);
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .filosofia__banner{
+        height: calc(100vh - 30rem);
+        width: 50%;
+    }
+}
+
