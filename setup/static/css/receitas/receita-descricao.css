@@ -1,0 +1,17 @@
+.receita__descricao {
+
+}
+
+@media screen and (min-width: 0) {
+    .receita__descricao {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .receita__descricao {
+        font-size: 2rem;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+}

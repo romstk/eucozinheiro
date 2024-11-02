@@ -1,0 +1,26 @@
+.receita__card {
+    align-items: center;
+    background-color: rgb(251, 243, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (min-width: 0) {
+    .receita__card {
+        padding: 0.5rem;
+        width: 90%;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .receita__card {
+        padding: 1rem;
+        width: 45%;
+
+    }
+    
+}

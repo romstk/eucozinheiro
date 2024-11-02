@@ -2,9 +2,10 @@
 # importamos aqui as views de receitas para poder utilizá-las na lista de rotas/urls
 
 from django.urls import path
-from receitas.views import index
+from receitas.views import index, receita
 
 #Criamos uma lista que será responsável por gerenciar as rotas/urls do app galeria
 urlpatterns = [
-        path('', index)
+        path('', index, name='home'),
+        path('receita/', receita, name='receita')
 ]

@@ -1,0 +1,27 @@
+.receitas__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+
+
+@media screen and (min-width: 0) {
+    .receitas__container {
+        flex-direction: column;
+        
+    }
+    
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .receitas__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem;
+    }
+    
+}

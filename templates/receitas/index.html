@@ -26,6 +26,22 @@
     <link rel="stylesheet" href="{% static '/css/institucional/institucional-span.css' %}">
     <link rel="stylesheet" href="{% static '/css/institucional/institucional-banner.css' %}">
 
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-conteudo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-titulo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-texto.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-container.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-card.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-nome.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-descricao.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-imagem.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-autor.css' %}">
+
+
+
+
+
+
 </head>
 <body>
     
@@ -40,7 +56,6 @@
     
     <main class="principal">
 
-        
         <section class="sobre">
             <h2 class="sobre__titulo">Prove o Sabor da Diversão e o Tempero da Saúde</h2>
             <p class="sobre__descricao">Transformamos o ato de cozinhar em uma celebração da vida, saúde e felicidade familiar. Nossa missão é simples.  Criar receitas que não apenas alimentem o corpo, mas também nutram a alma.</p>
@@ -65,8 +80,6 @@
 
         </section>
             
-
-
         <section class="institucional">
             
             <div class="institucional__conteudo">
@@ -93,14 +106,32 @@
 
         </section>
             
-
-
-
-       
-
-
         <section class="receitas">
+            
+            
+            <div class="receitas__conteudo">
+                <h2 class="receitas__titulo">Receitas </h2>
+                <p class="receitas__texto">Nesta área você encontra as receitas cadastradas no site, dicas sobre os ingredientes utilizados e comentários de especialistas sobre o prato.</p>
+            </div>
 
+            
+            <div class="receitas__container">
+                <div class="receita__card">
+                   
+                    <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
+                    <h3 class="receita__nome">Ossobuco na Pressão com batatas</h3>
+                    <p class="receita__descricao">Ossobuco bovino cozido com batatas, com cebolas, tomate e vinho tinto. Fica uma delícia.</p>
+                    
+                    <span class="receita__autor">Receita por: Ricardo</span>
+                </div>
+
+                <div class="receita__card">
+                    <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
+                    <h3 class="receita__nome">Cordeiro ao molho de hortelã</h3>
+                    <p class="receita__descricao">Pernil de cordeiro, com sal, pimenta e molho de hortelã. </p>
+                    <span class="receita__autor">Receita por: Ricardo</span>
+                </div>
+            </div>
 
         </section>
 

@@ -1,0 +1,21 @@
+.receita__nome {
+    font-weight: 500;
+}
+
+@media screen and (min-width: 0) {
+    .receita__nome {
+        font-size: 2rem;
+        
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .receita__nome {
+        font-size: 3rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        
+    }
+    
+}

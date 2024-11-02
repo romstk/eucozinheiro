@@ -1,0 +1,4 @@
+.receitas {
+    display: flex;
+    flex-direction: column;
+}
