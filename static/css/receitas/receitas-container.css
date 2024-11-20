@@ -1,5 +1,6 @@
 .receitas__container {
     display: flex;
+    background-color: black;
     justify-content: space-between;
     margin-top: 1rem;
 }

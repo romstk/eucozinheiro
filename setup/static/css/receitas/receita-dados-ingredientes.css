@@ -1,0 +1,5 @@
+.receita__dados--ingredientes {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}

@@ -1,0 +1,7 @@
+.receita__ingredientes { 
+    max-height: fit-content;
+    resize: both;
+    overflow: auto;
+    
+    
+}

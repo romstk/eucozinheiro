@@ -1,12 +1,74 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner-titulo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-imagem.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-ingredientes.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-preparo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-container.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-ingredientes.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receita-preparo.css' %}">
     <title>Receita</title>
 </head>
 <body>
     
-    
+    <div class="receitas__container">    
+            <a href="{% url 'home' %}">Voltar</a>
+
+            <section class="receita__banner">
+                <h3 class="receita__banner--titulo">Ossobuco na Pressão com batatas</h3>
+                    <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
+
+            </section>  
+                    
+                <section class="receita__dados">
+                        <p class="receita__descricao">Ossobuco bovino cozido com batatas, com cebolas, tomate e vinho tinto. Fica uma delícia.</p>
+                        
+                        <div class="receita__dados--container">
+                            <div class="receita__dados--ingredientes">
+                                <label for="">Ingredientes</label>
+                                <textarea class="receita__ingredientes"
+                            autocapitalize="characters"
+                            rows="20"
+                            readonly
+                         >2 kg de ossobuco; 
+2 cebolas médias;
+1 pimentão;
+2 dentes de alho; 
+4 tomates em rodelas; 
+1 sachê de molho de tomate; 
+1 colher de banha de porco ou óleo de soja (conforme preferência);
+Sal;
+2 xícaras de Vinho Tinto ou Branco;
+10 batatas-inglesas pequenas com casca;</textarea>
+
+                            </div>
+                        
+                            <div class="receita__dados--preparo">
+                                <label for="">Modo de Preparo</label>
+                                <textarea class="receita__preparo" rows="20" readonly>
+Na panela de pressão, colocar uma colher de banha ou azeite, levar cada pedaço de ossobuco de uma vez com sal a gosto, fritando cada lado para selar o pedaço de carne retirando em seguida colocando o próximo pedaço. Após todos os pedaços de carne selados na panela levar a cebola e alho picados, refogando os mesmos. Após refogados  a cebola e alho então desligar o fogo. 
+Acomodar sobre a cebola frita os pedaços de ossobuco, colocando sobre eles as rodelas de tomate, pimentão picado, duas xícaras de vinho, o sachê de molho de tomate e sobre todos os ingredientes colocar as batatas lavadas com a casca. 
+Deixar cozinhar por 30 minutos na pressão e servir. 
+
+                                </textarea>
+                            </div>
+                        </div>
+                        
+
+
+
+                        <span class="receita__autor">Receita por: Ricardo</span>
+
+                </section>
+    </div>
+
 </body>
 </html>

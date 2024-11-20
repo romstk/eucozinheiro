@@ -1,0 +1,26 @@
+.receita__dados { 
+    background-color: #fbf3eb;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 0rem;
+    margin-bottom: 5rem;
+    width: 100%;
+
+}
+
+@media screen and (min-width: 0px) {
+    .receita__dados {
+        font-size: 1rem;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .receita__dados {
+        font-size: 1.5rem;
+        padding: 1rem;
+
+    }
+    
+}

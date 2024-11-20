@@ -118,18 +118,28 @@
             <div class="receitas__container">
                 <div class="receita__card">
                    
+                    
                     <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
-                    <h3 class="receita__nome">Ossobuco na Pressão com batatas</h3>
+
+                    <a href="{% url 'receita' %}">
+                        <h3 class="receita__nome">Ossobuco na Pressão com batatas</h3>
+                    </a>     
                     <p class="receita__descricao">Ossobuco bovino cozido com batatas, com cebolas, tomate e vinho tinto. Fica uma delícia.</p>
                     
                     <span class="receita__autor">Receita por: Ricardo</span>
+                    
                 </div>
 
                 <div class="receita__card">
                     <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
-                    <h3 class="receita__nome">Cordeiro ao molho de hortelã</h3>
+                    
+                    <a href="{% url 'receita' %}">
+                        <h3 class="receita__nome">Cordeiro ao molho de hortelã</h3>
+                    </a>
+
                     <p class="receita__descricao">Pernil de cordeiro, com sal, pimenta e molho de hortelã. </p>
                     <span class="receita__autor">Receita por: Ricardo</span>
+                    
                 </div>
             </div>
 
