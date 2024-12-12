@@ -33,8 +33,8 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['194.163.132.241','eucozinheiro.com.br', 'www.eucozinheiro.com.br']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['194.163.132.241','eucozinheiro.com.br', 'www.eucozinheiro.com.br']
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'receitas',
+    'receitas.apps.ReceitasConfig',
 ]
 
 MIDDLEWARE = [

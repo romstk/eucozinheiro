@@ -116,31 +116,29 @@
 
             
             <div class="receitas__container">
-                <div class="receita__card">
-                   
-                    
-                    <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
+                <!--Neste ponto vamos montar a lista de cards dinamicamente
+                    A view que renderiza esta página em python carrega dos dados em uma variável chamda Cards contendo os dados das receitas para montar os cards dinamicamente 
 
-                    <a href="{% url 'receita' %}">
-                        <h3 class="receita__nome">Ossobuco na Pressão com batatas</h3>
-                    </a>     
-                    <p class="receita__descricao">Ossobuco bovino cozido com batatas, com cebolas, tomate e vinho tinto. Fica uma delícia.</p>
-                    
-                    <span class="receita__autor">Receita por: Ricardo</span>
-                    
-                </div>
+                    No for abaixo fazemos uma iteração nos dados 
+                    Temos o receita_id que são os ids, 1, 2…. que numeram os dados,
+                    Info são as informações contidas em cada item do dicionário
+                    Cards é o dicionário de dados recebido no index através da renderização.
+                -->
+                {% for receita in cards %}
 
-                <div class="receita__card">
-                    <img class="receita__imagem" src="{% static '/assets/imagens/receitas/ossobuco-na-pressao.jpg' %}" alt="ossobuco na pressão">
-                    
-                    <a href="{% url 'receita' %}">
-                        <h3 class="receita__nome">Cordeiro ao molho de hortelã</h3>
-                    </a>
+                    <div class="receita__card">
+                        <img class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem }}" alt="ossobuco na pressão">
 
-                    <p class="receita__descricao">Pernil de cordeiro, com sal, pimenta e molho de hortelã. </p>
-                    <span class="receita__autor">Receita por: Ricardo</span>
-                    
-                </div>
+                        <a href="{% url 'receita' %}">
+                            <h3 class="receita__nome">{{receita.nome}}</h3>
+                        </a>     
+                        <p class="receita__descricao"> {{receita.descricao}}</p>
+                        
+                        <span class="receita__autor">Receita por: {{receita.autor}}</span>
+                        
+                    </div>
+                {% endfor %}
+
             </div>
 
         </section>
