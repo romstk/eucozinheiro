@@ -1,16 +1,17 @@
 .receita__descricao {
-
+    color: #595959;
+    font-weight: 100;
 }
 
 @media screen and (min-width: 0) {
     .receita__descricao {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
 @media screen and (min-width: 768px) {
     .receita__descricao {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-top: 1rem;
         padding: 1rem;
     }

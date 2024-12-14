@@ -21,7 +21,7 @@
     .receitas__container {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 1rem;
         margin: 1rem;
     }
     

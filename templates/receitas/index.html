@@ -126,10 +126,15 @@
                 -->
                 {% for receita in cards %}
 
-                    <div class="receita__card">
-                        <img class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem }}" alt="ossobuco na pressão">
 
-                        <a href="{% url 'receita' %}">
+                    <div class="receita__card">
+                        {% if receita.imagem == "" or receita.imagem == null  %}
+                            <img class="receita__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
+                        {% else %}
+                            <img class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
+                        {% endif %}
+
+                        <a href="{% url 'receita' receita.id %}">
                             <h3 class="receita__nome">{{receita.nome}}</h3>
                         </a>     
                         <p class="receita__descricao"> {{receita.descricao}}</p>

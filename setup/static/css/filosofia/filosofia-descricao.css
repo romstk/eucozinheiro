@@ -1,5 +1,7 @@
 .filosofia__descricao {
+    color: #595959;
     display: flex;
+    font-weight: 100;
 }
 
 

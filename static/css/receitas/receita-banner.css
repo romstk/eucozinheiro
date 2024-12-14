@@ -2,6 +2,12 @@
     align-items: center;
     background-color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     padding: 1rem;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+
+
 }

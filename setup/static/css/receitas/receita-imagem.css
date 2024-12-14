@@ -1,20 +1,22 @@
 .receita__imagem {
-    display: flex;
+    display: block;
+    max-width: 100%; /* Limita a largura máxima à largura do contêiner */
+    max-height: 50%; /*Limita a altura máxima à altura do contêiner */
+    object-fit: contain; /* Faz a imagem se ajustar ao contêiner sem distorção */
+    
     
 }
 
 @media screen and (min-width: 0) {
     .receita__imagem{
-        width: 100%;
-        height: 70%;
+       
     }
 }
 
 
 @media screen and (min-width: 768px) {
     .receita__imagem{
-        width: 90%;
-        height: 70%;
+        
     }
 }
 

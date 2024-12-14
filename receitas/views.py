@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from receitas.models import Receita
 
 
@@ -9,5 +9,8 @@ def index (request):
 
 
 #Esta function tem o nome da url definida em urls.py(rlpatterns), ao ser chamada a url aciona esta função
-def receita(request): 
-    return render(request, 'receitas/receita.html')
+def receita(request, receita_id): 
+    #Vamos capturar o objeto do banco de dados com base no id(pk-->primary key)recebida pela url
+    receita = get_object_or_404(Receita , pk=receita_id)
+    #Ao renderizar passo além da url um dicionário com os dados da receita
+    return render(request, 'receitas/receita.html', {"receita": receita})
