@@ -1,9 +1,10 @@
-.receita__nome {
+.receitas__nome {
+    background-color: peru;
     font-weight: 500;
 }
 
 @media screen and (min-width: 0) {
-    .receita__nome {
+    .receitas__nome {
         font-size: 2rem;
         
     }
@@ -11,8 +12,9 @@
 }
 
 @media screen and (min-width: 768px) {
-    .receita__nome {
+    .receitas__nome {
         font-size: 3rem;
+        grid-area: receita__nome;
         margin-top: 1rem;
         padding: 1rem;
         

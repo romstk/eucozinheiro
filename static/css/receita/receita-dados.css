@@ -1,4 +1,5 @@
 .receita__dados { 
+    align-items: center;
     background-color: #fbf3eb;
     display: flex;
     flex-wrap: nowrap;

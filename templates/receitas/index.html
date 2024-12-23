@@ -31,11 +31,11 @@
     <link rel="stylesheet" href="{% static '/css/receitas/receitas-titulo.css' %}">
     <link rel="stylesheet" href="{% static '/css/receitas/receitas-texto.css' %}">
     <link rel="stylesheet" href="{% static '/css/receitas/receitas-container.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-card.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-nome.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-descricao.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-imagem.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-autor.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-card.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-nome.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-descricao.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-imagem.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receitas/receitas-autor.css' %}">
 
 
 
@@ -127,19 +127,19 @@
                 {% for receita in cards %}
 
 
-                    <div class="receita__card">
+                    <div class="receitas__card">
                         {% if receita.imagem == "" or receita.imagem == null  %}
-                            <img class="receita__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
+                            <img class="receitas__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
                         {% else %}
-                            <img class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
+                            <img class="receitas__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
                         {% endif %}
 
                         <a href="{% url 'receita' receita.id %}">
-                            <h3 class="receita__nome">{{receita.nome}}</h3>
+                            <h3 class="receitas__nome">{{receita.nome}}</h3>
                         </a>     
-                        <p class="receita__descricao"> {{receita.descricao}}</p>
+                        <p class="receitas__descricao"> {{receita.descricao}}</p>
                         
-                        <span class="receita__autor">Receita por: {{receita.autor}}</span>
+                        <span class="receitas__autor">Receita por: {{receita.autor}}</span>
                         
                     </div>
                 {% endfor %}

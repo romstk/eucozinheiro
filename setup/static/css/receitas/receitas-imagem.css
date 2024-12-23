@@ -1,0 +1,22 @@
+.receitas__imagem {
+    display: block;
+    max-width: 100%; /* Limita a largura máxima à largura do contêiner */
+    max-height: 90%; /*Limita a altura máxima à altura do contêiner */
+    object-fit: contain; /* Faz a imagem se ajustar ao contêiner sem distorção */
+    
+    
+}
+
+@media screen and (min-width: 0) {
+    .receitas__imagem{
+       
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .receitas__imagem{
+        grid-area: receita__imagem; /*nome da área utilizada no gridlayout da index*/
+    }
+}
+

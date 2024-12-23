@@ -6,6 +6,8 @@
 @media screen and (min-width: 0) {
     .receita__autor {
         font-size: 1rem;
+        grid-area: receita__autor;
+        justify-self: right;
     }
     
 }

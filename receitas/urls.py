@@ -7,5 +7,6 @@ from receitas.views import index, receita
 #Criamos uma lista que será responsável por gerenciar as rotas/urls do app galeria
 urlpatterns = [
         path('', index, name='home'),
-        path('receita/<int:receita_id>', receita, name='receita')
+        path('receita/<int:receita_id>/', receita, name='receita')
 ]
+

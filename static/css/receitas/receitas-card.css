@@ -1,0 +1,44 @@
+.receitas__card {
+    background-color: rgb(251, 243, 235);
+    
+    
+    
+}
+
+@media screen and (min-width: 0) {
+    .receitas__card {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        width: 100%;
+        
+    }
+    
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .receitas__card {
+        /* Aplicamos a este elemento o display grid e a cada classe para os elementos envolvidos em seu arquivo css aplicamos a propriedade grid-area respectivo ao seu nome
+        Decisão de usar grid para este tamanho foi para deixar os elementos mais alinhas e com posições definidas pois o flex estava desalinhando conforme o tamanho dos textos*/
+        justify-items: center;
+        display: grid;
+        grid-template-areas: "receita__imagem"
+                             "receita__nome"
+                             "receita__descricao"
+                             "receita__autor";
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 0.5rem 1rem;
+        width: 48%;
+    }
+    
+}
+
+.receitas__card a {
+    color: #000000;
+    font-family: Pacifico, cursive;
+    text-decoration: none;
+
+}

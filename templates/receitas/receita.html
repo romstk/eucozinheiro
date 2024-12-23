@@ -5,24 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-container.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-banner-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-imagem.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-ingredientes.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-preparo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-dados-container.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-ingredientes.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receita-preparo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-banner.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-banner-titulo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-imagem.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-dados.css' %}">
+    
+    <link rel="stylesheet" href="{% static '/css/receita/receita-descricao.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-container.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-preparo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-ingredientes.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-ingredientes.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-preparo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-autor.css' %}">
+    
     <title>Receita</title>
 </head>
 <body>
     
     <a href="{% url 'home' %}">Voltar</a>
     
-    <div class="receitas__container">    
+    <div class="receita">    
         
                 <section class="receita__banner">
                 <h3 class="receita__banner--titulo">{{receita.nome}}</h3>

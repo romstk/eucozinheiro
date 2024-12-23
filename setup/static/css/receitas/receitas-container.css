@@ -1,8 +1,8 @@
 .receitas__container {
     display: flex;
-    background-color: black;
     justify-content: space-between;
     margin-top: 1rem;
+    
 }
 
 
@@ -21,7 +21,7 @@
     .receitas__container {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.3rem;
         margin: 1rem;
     }
     
