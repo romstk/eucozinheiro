@@ -4,7 +4,8 @@ from receitas.models import Receita
 
 def index (request):
     #criando um objeto que vai trazer os dados do banco de dados através de models.
-    receitas = Receita.objects.all()
+    #Filtramos apenas as receitas publicadas e ordenando por data 
+    receitas = Receita.objects.order_by("data").filter(publicada=True)
     return render(request, 'receitas/index.html', {"cards" : receitas})
 
 

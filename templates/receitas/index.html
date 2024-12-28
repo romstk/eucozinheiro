@@ -124,9 +124,9 @@
 
                     <div class="receitas__card">
                         {% if receita.imagem == "" or receita.imagem == null  %}
-                            <img class="receitas__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
+                            <img class="receitas__imagem" src="{% static '/assets/imagens/not-found.png' %}" alt="not-found">
                         {% else %}
-                            <img class="receitas__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
+                            <img class="receitas__imagem" src="{{ receita.imagem.url }}" alt="{{receita.nome}}">
                         {% endif %}
 
                         <a href="{% url 'receita' receita.id %}">

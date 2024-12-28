@@ -8,5 +8,6 @@ from receitas.views import index, receita
 urlpatterns = [
         path('', index, name='home'),
         path('receita/<int:receita_id>/', receita, name='receita')
+        
 ]
 

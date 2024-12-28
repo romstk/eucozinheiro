@@ -132,7 +132,10 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#Diretório de armazenamento das medias do projeto 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+MEDIA_URL = "/media/"
 
 
 # Default primary key field type
