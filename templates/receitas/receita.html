@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static '/css/receita/receita.css' %}">
     <link rel="stylesheet" href="{% static '/css/receita/receita-banner.css' %}">
     <link rel="stylesheet" href="{% static '/css/receita/receita-banner-titulo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/receita/receita-banner-imagem.css' %}">
     <link rel="stylesheet" href="{% static '/css/receita/receita-imagem.css' %}">
     <link rel="stylesheet" href="{% static '/css/receita/receita-dados.css' %}">
     
@@ -28,15 +29,21 @@
     <div class="receita">    
         
                 <section class="receita__banner">
-                <h3 class="receita__banner--titulo">{{receita.nome}}</h3>
-                    {% if receita.imagem == "" or receita.imagem == null  %}
-                        <img class="receita__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
-                    {% else %}
-                        <img class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
-                    {% endif %}
-                </section>  
+                
                     
+                    <figure class="receita__banner--imagem">
+                        {% if receita.imagem == "" or receita.imagem == null  %}
+                            <img  class="receita__imagem" src="{% static '/assets/imagens/receitas/not-found.png' %}" alt="not-found">
+                        {% else %}
+                            <img  class="receita__imagem" src="{% static '/assets/imagens/receitas/'%}{{receita.imagem}}" alt="{{receita.nome}}">
+                        {% endif %}
+
+                    </figure>
+                        
+                </section>  
+                
                 <section class="receita__dados">
+                    <h3 class="receita__banner--titulo">{{receita.nome}}</h3>    
                         <p class="receita__descricao">{{receita.descricao}}</p>
                         
                         <div class="receita__dados--container">

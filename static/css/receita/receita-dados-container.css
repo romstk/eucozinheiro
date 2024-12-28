@@ -1,8 +1,8 @@
 .receita__dados--container {
+    align-items: center;
     display: flex;
     flex-wrap: nowrap;
     gap: 2rem;
-    justify-content: space-between;
     width: 90%;
 }
 
@@ -16,6 +16,7 @@
 @media screen and (min-width: 768px) {
     .receita__dados--container {
         flex-direction: row;
+        justify-content: space-between;
         
     }
     

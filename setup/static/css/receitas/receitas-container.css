@@ -9,7 +9,9 @@
 
 @media screen and (min-width: 0) {
     .receitas__container {
+        box-sizing: border-box;
         flex-direction: column;
+        max-width: 100%;
         
     }
     

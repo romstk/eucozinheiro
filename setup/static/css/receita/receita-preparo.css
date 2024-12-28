@@ -1,7 +1,9 @@
 .receita__preparo { 
+    border: none;
     max-height: fit-content;
-    resize: both;
+    margin-top: 1rem;
     overflow: auto;
+    resize: both;
     
     
 }

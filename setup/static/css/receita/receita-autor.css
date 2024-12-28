@@ -1,13 +1,14 @@
 .receita__autor {
-    align-self: flex-end;
+    
     font-weight: 900;
 }
 
 @media screen and (min-width: 0) {
     .receita__autor {
+        align-self: center;
         font-size: 1rem;
         grid-area: receita__autor;
-        justify-self: right;
+
     }
     
 }
@@ -15,6 +16,7 @@
 
 @media screen and (min-width: 768px) {
     .receita__autor {
+        align-self: flex-end;
         font-size: 1.5rem;
 
     }

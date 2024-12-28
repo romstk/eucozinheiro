@@ -1,9 +1,6 @@
 .receita__banner--titulo {
     font-family: 'Pacifico', cursive;
     color: #fdfdfd;
-    position: absolute; /*Absoluta em relação ao pai que é o banner*/
-    left: 50%;
-    top: 80%;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
     text-align: center;
     width: 100%;
@@ -12,12 +9,15 @@
 @media screen and (min-width: 0px) {
     .receita__banner--titulo{
         font-size: 2rem;
-        transform: translate(-50%, -100%);
+        /*transform: translate(-50%, -800%);*/
     }
 }
 
 @media screen and (min-width: 768px) {
     .receita__banner--titulo{
+        position: absolute; /*Absoluta em relação ao pai que é o banner*/
+        left: 50%;
+        top: 80%;
         font-size: 4rem;
         transform: translate(-50%, -100%);
     }

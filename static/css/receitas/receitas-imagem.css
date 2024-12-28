@@ -1,4 +1,5 @@
 .receitas__imagem {
+    border: 1rem solid peru;
     display: block;
     max-width: 100%; /* Limita a largura máxima à largura do contêiner */
     max-height: 90%; /*Limita a altura máxima à altura do contêiner */

@@ -1,8 +1,9 @@
 .receita__imagem {
     display: block;
-    max-width: 100%; /* Limita a largura máxima à largura do contêiner */
-    max-height: 90%; /*Limita a altura máxima à altura do contêiner */
+    max-width: 100%; /* Limita a largura máxima à largura do container pai */
+    max-height: 100%; /*Limita a altura máxima à altura do container pai */
     object-fit: contain; /* Faz a imagem se ajustar ao contêiner sem distorção */
+
     
     
 }
