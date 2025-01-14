@@ -1,20 +1,19 @@
-.receitas {
-    box-sizing: border-box;
+.institucional__conteudo {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    
 }
 
 @media screen and (min-width: 0) {
-    .receitas {
-        margin-top: 1rem;
+    .institucional__conteudo {
+        padding: 1rem;
     }
     
 }
 
 @media screen and (min-width: 768px) {
-    .receitas {
-        margin-top: 2rem;
+    .institucional__conteudo {
+        padding: 2rem;
     }
     
 }

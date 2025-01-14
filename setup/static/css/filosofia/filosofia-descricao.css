@@ -1,6 +1,7 @@
 .filosofia__descricao {
+    align-self: center;
     color: #595959;
-    display: flex;
+    font-size: 1.75rem;
     font-weight: 100;
 }
 

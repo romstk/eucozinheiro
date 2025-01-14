@@ -12,7 +12,7 @@
 
 @media screen and (min-width: 0) {
     .banner__titulo {
-        font-size: 3rem;
+        font-size: 4rem;
         transform: translate(-50%, -100%);
     }
 }
