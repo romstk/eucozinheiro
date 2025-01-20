@@ -5,73 +5,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/receita/receita.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-banner.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-banner-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-banner-imagem.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-imagem.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-dados.css' %}">
-    
-    <link rel="stylesheet" href="{% static '/css/receita/receita-descricao.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-container.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-preparo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-dados-ingredientes.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-ingredientes.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-preparo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receita/receita-autor.css' %}">
     
     <title>Receita</title>
 </head>
 <body>
     
-    <a href="{% url 'home' %}">Voltar</a>
-    
-    <div class="receita">    
-        
-                <section class="receita__banner">
-                
-                    
-                    <figure class="receita__banner--imagem">
-                        {% if receita.imagem == "" or receita.imagem == null  %}
-                            <img  class="receita__imagem" src="{% static '/assets/imagens/not-found.png' %}" alt="not-found">
-                        {% else %}
-                            <img  class="receita__imagem" src="{{ receita.imagem.url }}" alt="{{receita.nome}}">
-                        {% endif %}
+  
+    {% include 'partials/_navbar.html'%}
 
-                    </figure>
-                        
-                </section>  
+    <section class="container-fluid p-0">
+
+        <section class="container-fluid bg-body-secondary">   
+            <figure class="figure-img">
+                {% if receita.imagem == "" or receita.imagem == null  %}
+                    <img  class="img-fluid rounded mx-auto d-block" src="{% static '/assets/imagens/not-found.png' %}" alt="not-found">
+                {% else %}
+                    <img  class="img-fluid rounded mx-auto d-block" src="{{ receita.imagem.url }}" alt="{{receita.nome}}">
+                {% endif %}
+            </figure>
                 
-                <section class="receita__dados">
-                    <h3 class="receita__banner--titulo">{{receita.nome}}</h3>    
-                        <p class="receita__descricao">{{receita.descricao}}</p>
-                        
-                        <div class="receita__dados--container">
-                            <div class="receita__dados--ingredientes">
-                                <label for="">Ingredientes</label>
-                                <textarea class="receita__ingredientes"
+        </section>  
+
+        <h1 class="h1 text-center mb-5">{{receita.nome}}</h1>    
+            <p class="p-3 fw-light text-start fs-2">{{receita.descricao}}</p>
+            
+            
+            <div class="mt-5 container fs-3">
+                <div class="row">                            
+                    <div class="fw-light col-md-6">
+                            <label class="fw-bolder" for="textarea1">Ingredientes</label>
+                            <textarea id="textarea1"
+                                class="form-control fs-4"
+                                autocapitalize="characters"
+                                rows="20"
+                                readonly
+                            >
+                                {{receita.ingredientes}}
+                            </textarea>
+                    </div>
+                
+
+                    <div class="fw-light col-md-6">
+                            <label class="fw-bolder" for="textarea2">Modo de Preparo</label>
+                            <textarea 
+                            id="textarea2"
+                            class="form-control fs-4" 
                             autocapitalize="characters"
-                            rows="20"
-                            readonly
-                         >
-                         {{receita.ingredientes}}
-                        </textarea>
-
-                            </div>
-                        
-                            <div class="receita__dados--preparo">
-                                <label for="">Modo de Preparo</label>
-                                <textarea class="receita__preparo" rows="20" readonly>{{receita.preparo}}</textarea>
-                            </div>
+                            rows="20" 
+                            readonly>
+                                {{receita.preparo}}
+                            </textarea>
                         </div>
-                        
+                    
+                
+                </div>
+            </div>
 
+            <span class="fw-light">Receita por: {{receita.autor}}</span>
 
-
-                        <span class="receita__autor">Receita por: {{receita.autor}}</span>
-
-                </section>
-    </div>
-
+    </section>
 </body>
 </html>

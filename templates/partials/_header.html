@@ -6,42 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EuCozinheiro</title>
-    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    
     <link rel="stylesheet" href="{% static '/css/cabecalho/banner/banner.css' %}">
     <link rel="stylesheet" href="{% static '/css/cabecalho/banner/banner-imagem.css' %}">
     <link rel="stylesheet" href="{% static '/css/cabecalho/banner/banner-titulo.css' %}">
     <link rel="stylesheet" href="{% static '/css/cabecalho/banner/banner-subtitulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/sobre/sobre.css' %}"> 
-    <link rel="stylesheet" href="{% static '/css/sobre/sobre-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/sobre/sobre-descricao.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia-banner.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia-conteudo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia-descricao.css' %}">
-    <link rel="stylesheet" href="{% static '/css/filosofia/filosofia-lista.css' %}">
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional.css' %}">
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional-conteudo.css' %}">
+
     
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional-lista.css' %}">
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional-span.css' %}">
-    <link rel="stylesheet" href="{% static '/css/institucional/institucional-banner.css' %}">
 
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-conteudo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-titulo.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-texto.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-container.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-card.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-nome.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-descricao.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-imagem.css' %}">
-    <link rel="stylesheet" href="{% static '/css/receitas/receitas-autor.css' %}">
-
+    
 </head>
 <body>
     
+    {% include 'partials/_navbar.html'%}
     <header class="cabecalho">
         <section class="banner">
             <div class="banner__imagem"></div>
@@ -49,5 +26,7 @@
             <h2 class="banner__subtitulo">Prazer em Cozinhar</h2>
         </section>
     </header>
-    
+
+
+
 </body>
