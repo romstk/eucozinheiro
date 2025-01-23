@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    {% include 'partials/_navbar.html' %}
+    <div class="container-fluid mt-5 p-5">
+        
+            {% include 'partials/_alertas.html' %}
+            <form action="{% url 'login' %}" method="POST">
+                <!--csrf_token - dentro da tag form, importante para garantir a segurança das informações que eu estive passando pelo formulário -->
+                {% csrf_token %}
+                
+                {% for field in form.visible_fields  %}
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <label for="{{ field.id_for_label }}">{{field.label}}</label>
+                        {{field}}
+                    </div>
+                </div>    
+                {% endfor %}
+                
+                <div id="" class="form-text">
+                    <a href="{% url 'update_password_user' %}">Esqueci minha senha</a>
+                </div>
+
+                <div class="row mb-3 col-3">
+                    <button class="btn btn-success"  type="submit">Acessar</button>
+                </div>
+            </form>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!-- O código abaixo é utilizado para exibição de mensagens de alerta para os tamplates que forem renderizados e tiverem algum tipo de validação com mensagens de alerta.  
+-->
+{% if messages %}
+    {% for message in messages  %}
+        <div class="alert alert-primary">
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}    
