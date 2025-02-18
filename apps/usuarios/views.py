@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from usuarios.forms import CadastroForms, LoginForms, UpdatePasswordForms
+from apps.usuarios.forms import CadastroForms, LoginForms, UpdatePasswordForms
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
 
@@ -31,7 +31,7 @@ def login(request):
             messages.success(request, "usuário logado!")
             return redirect('home')
         else:
-            messages.error(request, "Erro ao efetuar login!")
+            messages.error(request, "Erro ao efetuar login! Verifique usuário e senha e tente novamente.")
             return redirect('login')
 
     return render(request, 'usuarios/login.html', {"form": form})
@@ -108,7 +108,4 @@ def update_password_user(request):
             usuario.save()
             messages.success(request, 'Dados informados estão corretos. Senha atualizada. ')
             return redirect('login')
-                
-                
-
     return render(request, 'usuarios/update_password.html', {"form": form })

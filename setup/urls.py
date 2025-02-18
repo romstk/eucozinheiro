@@ -23,6 +23,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     #a rota abaixo está sendo importada do arquivo receitas.urls, que é onde está definida a rota para o app receitas,
-    path('', include('receitas.urls')),
-    path('', include('usuarios.urls')),
+    path('', include('apps.receitas.urls')),
+    path('', include('apps.usuarios.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

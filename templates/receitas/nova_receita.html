@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    
+    {% include 'partials/_navbar.html' %}
+    
+        <div class="container-fluid mt-5 p-5">
+            <h1 class="h1">Cadastro de receitas</h1>
+            {% include 'partials/_alertas.html' %}
+            <form class="" action="{% url 'nova_receita' %}" method="POST" enctype="multipart/form-data">
+                <!--csrf_token - dentro da tag form, importante para garantir a segurança das informações que eu estive passando pelo formulário -->
+                {% csrf_token %}
+                
+                    {% for field in form.visible_fields %}
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="{{ field.id_for_label }}">{{field.label}}</label>
+                            {{field}}
+                        </div>
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </div>        
+                    {% endfor %}
+                <div class="row mb-3 col-4">
+                        <button class="btn btn-success"  type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

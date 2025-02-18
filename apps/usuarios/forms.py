@@ -1,6 +1,7 @@
 #Classe responsável por gerenciar os formulários da aplicação de usuários 
 from django import forms
 
+
 class LoginForms(forms.Form): 
     nome_login = forms.CharField(
         label = "Nome Login",
@@ -25,8 +26,6 @@ class LoginForms(forms.Form):
         )
 
     )
-
-
 
 class CadastroForms(forms.Form):
 
@@ -109,8 +108,8 @@ class CadastroForms(forms.Form):
               else:
                    return senha_2
 
-
 class UpdatePasswordForms(forms.Form):
+
     #Formulário utilizado para alteração da senha do usuário. 
     #O usuário precisa informar os campos do cadstro para o sistema aceitar a troca de senha.
     nome_cadastro = forms.CharField(
@@ -124,7 +123,6 @@ class UpdatePasswordForms(forms.Form):
             }
         )
     )
-
     email = forms.EmailField(
         label="Email", 
         required=True,
@@ -136,7 +134,6 @@ class UpdatePasswordForms(forms.Form):
             }
         )
     )
-
     senha = forms.CharField(
         label = "Senha",
         required=True,
@@ -148,3 +145,4 @@ class UpdatePasswordForms(forms.Form):
             }
         )
     )
+

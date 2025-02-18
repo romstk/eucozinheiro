@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,25 +107,30 @@
                     Info são as informações contidas em cada item do dicionário
                     Cards é o dicionário de dados recebido no index através da renderização.
                 -->
-                {% for receita in cards %}
+
+                {% if cards %}
+                    {% for receita in cards %}
 
 
-                    <div class="receitas__card">
-                        {% if receita.imagem == "" or receita.imagem == null  %}
-                            <img class="receitas__imagem" src="{% static '/assets/imagens/not-found.png' %}" alt="not-found">
-                        {% else %}
-                            <img class="receitas__imagem" src="{{ receita.imagem.url }}" alt="{{receita.nome}}">
-                        {% endif %}
+                        <div class="receitas__card">
+                            {% if receita.imagem == "" or receita.imagem == null  %}
+                                <img class="receitas__imagem" src="{% static '/assets/imagens/not-found.png' %}" alt="not-found">
+                            {% else %}
+                                <img class="receitas__imagem" src="{{ receita.imagem.url }}" alt="{{receita.nome}}">
+                            {% endif %}
 
-                        <a class="receitas__titulo" href="{% url 'receita' receita.id %}">
-                            <h3 class="receitas__nome">{{receita.nome}}</h3>
-                        </a>     
-                        <p class="receitas__descricao"> {{receita.descricao}}</p>
-                        
-                        <span class="receitas__autor">Receita por: {{receita.autor}}</span>
-                        
-                    </div>
-                {% endfor %}
+                            <a class="receitas__titulo" href="{% url 'receita' receita.id %}">
+                                <h3 class="receitas__nome">{{receita.nome}}</h3>
+                            </a>     
+                            <p class="receitas__descricao"> {{receita.descricao}}</p>
+                            
+                            <span class="receitas__autor">Receita por: {{receita.autor}}</span>
+                            
+                        </div>
+                    {% endfor %}
+                {% endif %}    
+
+
 
             </div>
         </section>

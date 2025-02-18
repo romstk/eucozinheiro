@@ -6,10 +6,8 @@
     <title>Login</title>
 </head>
 <body>
-
     {% include 'partials/_navbar.html' %}
     <div class="container-fluid mt-5 p-5">
-        
             {% include 'partials/_alertas.html' %}
             <form action="{% url 'login' %}" method="POST">
                 <!--csrf_token - dentro da tag form, importante para garantir a segurança das informações que eu estive passando pelo formulário -->

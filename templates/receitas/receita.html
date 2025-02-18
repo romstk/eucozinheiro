@@ -24,6 +24,7 @@
                 
         </section>  
 
+        {% include 'partials/_alertas.html' %}
         <h1 class="h1 text-center mb-5">{{receita.nome}}</h1>    
             <p class="p-3 fw-light text-start fs-2">{{receita.descricao}}</p>
             
@@ -42,7 +43,6 @@
                             </textarea>
                     </div>
                 
-
                     <div class="fw-light col-md-6">
                             <label class="fw-bolder" for="textarea2">Modo de Preparo</label>
                             <textarea 
@@ -53,13 +53,37 @@
                             readonly>
                                 {{receita.preparo}}
                             </textarea>
-                        </div>
-                    
-                
+                    </div>    
                 </div>
+
+                
+                
+                    <div class="row">
+                        <div class="fw-light col-md-6">
+                            <span class="fw-light">Receita por: {{receita.autor}}</span>
+                        </div>
+
+                        <!-- Neste ponto recebemos o contexto da view e podemos tratar o usuário logado no sistema que está sendo passado no contexto pelo Django. Vamos mostrar o botão editar caso o usuário logado seja o autor da receita. -->
+                        {% if user.is_authenticated and receita.autor_id == user.id %}
+                            <div class="fw-light col-md-6">
+                                <a href="{% url 'editar_receita' receita.id  %}">
+                                    <button class="btn btn-success col-12">
+                                        Editar
+                                    </button>
+                                </a> 
+                                <a href="{% url 'deletar_receita' receita.id  %}">
+                                    <button class="btn btn-danger col-12">
+                                        Apagar
+                                    </button>
+                                </a>
+                            </div>                    
+                        {% endif %}    
+                    </div>
+                                
             </div>
 
-            <span class="fw-light">Receita por: {{receita.autor}}</span>
+           
+            
 
     </section>
 </body>

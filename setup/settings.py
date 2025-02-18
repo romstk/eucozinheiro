@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'receitas.apps.ReceitasConfig',
-    'usuarios.apps.UsuariosConfig',
+    'apps.receitas.apps.ReceitasConfig',
+    'apps.usuarios.apps.UsuariosConfig',
 ]
 
 MIDDLEWARE = [

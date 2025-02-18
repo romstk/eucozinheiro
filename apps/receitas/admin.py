@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from receitas.models import Receita
+from apps.receitas.models import Receita
 
 
 class ListandoReceitas(admin.ModelAdmin):
