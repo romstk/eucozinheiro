@@ -11,6 +11,17 @@ def index (request):
     return render(request, 'receitas/index.html', {"cards" : receitas})
 
 
+def filtro(request):
+    if request.method == "POST": 
+        filtro = request.POST.get('filtro')
+        if filtro:
+            receitas = Receita.objects.order_by("data").filter(publicada=True, nome__icontains=filtro)
+        else: 
+            receitas = Receita.objects.order_by("data").filter(publicada=True)
+
+        
+        return render(request, 'receitas/index.html#receitas__container', {"cards" : receitas})        
+
 #Esta function tem o nome da url definida em urls.py(rlpatterns), ao ser chamada a url aciona esta função
 def receita(request, receita_id): 
     #primeiramente vamos testar se o usuário está logado. Se não tiver vamos redirecionar para login
@@ -60,6 +71,7 @@ def editar_receita(request, receita_id):
         #se receber os dados por post vai capturar os novos dados recebidos e instance significa que o que não for mudado ele pega de receita já instanciada para fazer o update. 
         form = ReceitaForms(request.POST, request.FILES, instance=receita)
         if form.is_valid():
+            form.instance.publicada = False
             form.save()#como estamos usando um ModelForm-ReceitaForm já basta mandar o form ser salvo que o Django se encarrega de tratar a model vinculada ao form e salvar os dados. 
             messages.success(request, 'Receita editada.')
             return redirect(f'/receita/{receita_id}/')
@@ -74,4 +86,3 @@ def deletar_receita(request, receita_id):
     receita.delete()
     messages.success(request, 'Receita apagada.')
     return redirect('home')
-

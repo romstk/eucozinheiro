@@ -40,9 +40,9 @@
  
 
     <main class="principal">
-
+        
         {% include 'partials/_header.html'%}
-
+        
         <section class="sobre">
             <h2 class="sobre__titulo">Prove o Sabor da Diversão e o Tempero da Saúde</h2>
             <p class="sobre__descricao">Transformamos o ato de cozinhar em uma celebração da vida, saúde e felicidade familiar. Nossa missão é simples.  Criar receitas que não apenas alimentem o corpo, mas também nutram a alma.</p>
@@ -97,8 +97,18 @@
                 <p class="receitas__texto">Nesta área você encontra as receitas cadastradas no site, dicas sobre os ingredientes utilizados e comentários de especialistas sobre o prato.</p>
             </div>
 
+            <!--Neste ponto vamos ter uma navbar de busca das receitas para podermos filtrar os dados-->
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search" method="POST" action="{% url 'filtro'%}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Informe o título" aria-label="Search" name="filtro">
+                    <button class="btn btn-outline-success" type="submit">Filtro por título</button>
+                  </form>
+                </div>
+              </nav>
             
-            <div class="receitas__container">
+            <div class="receitas__container" id="receitas__container">
                 <!--Neste ponto vamos montar a lista de cards dinamicamente
                     A view que renderiza esta página em python carrega dos dados em uma variável chamda Cards contendo os dados das receitas para montar os cards dinamicamente 
 

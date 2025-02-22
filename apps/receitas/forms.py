@@ -13,7 +13,7 @@ class ReceitaForms(forms.ModelForm):
             'descricao' : "Descrição",
             'ingredientes' : "Ingredientes", 
             'preparo' : "Mode de Preparo",
-            'imagem' : "Foto do Prato"
+            'imagem' : "Foto do Prato:  Recomendado uma foto tamanho: 800px X 800Ppx máximo 200kb"
         }
 
         widgets = {
@@ -26,8 +26,9 @@ class ReceitaForms(forms.ModelForm):
 
     #Este método faz a validação do tamanho da imagem máxima aceita no formulário e retorna um erro caso a imagem não possa ser aceita 
     def clean_imagem(self):
-        tamanho_maximo = 50 * 1024 #variável que define o tamanho máximo de arquivo que podemos fazer o upload transformando em kbytes
+        tamanho_maximo = 200 * 1024 #variável que define o tamanho máximo de arquivo que podemos fazer o upload transformando em kbytes
         arquivo = self.cleaned_data.get('imagem')  #'arquivo' é o nome do campo FileField no seu formulário
+        
         if arquivo is not None and arquivo.size > tamanho_maximo: 
                 raise forms.ValidationError(f"Tamanho do arquivo não pode exceder {tamanho_maximo / 1024} KB")
         else: 
