@@ -62,24 +62,53 @@
                         <div class="fw-light col-md-6">
                             <span class="fw-light">Receita por: {{receita.autor}}</span>
                         </div>
-
+                    </div>
                         <!-- Neste ponto recebemos o contexto da view e podemos tratar o usuário logado no sistema que está sendo passado no contexto pelo Django. Vamos mostrar o botão editar caso o usuário logado seja o autor da receita. -->
                         {% if user.is_authenticated and receita.autor_id == user.id %}
+                        <div class="row">
                             <div class="fw-light col-md-6">
                                 <a href="{% url 'editar_receita' receita.id  %}">
                                     <button class="btn btn-success col-12">
                                         Editar
                                     </button>
-                                </a> 
+                                </a>
+                            </div>
+                            <div class="fw-light col-md-6">
                                 <a href="{% url 'deletar_receita' receita.id  %}">
                                     <button class="btn btn-danger col-12">
                                         Apagar
                                     </button>
                                 </a>
-                            </div>                    
+                            </div>      
+                            
+                        </div>    
                         {% endif %}    
-                    </div>
-                                
+                        <!--Se o usuário que estiver logado for superusuario vai habilitar um botão para publicar a receita caso não esteja publicada e para retirar a publicação se estiver publicada-->
+                        {% if user.is_superuser and receita.publicada == False %}
+                        
+                        <div class="row">
+                            <div class="fw-light col-md-6">    
+                                <a href="{% url 'publicar_receita' receita.id  %}">
+                                <button class="btn btn-primary col-12">
+                                    Publicar
+                                </button>
+                                </a>
+                            </div>    
+                        </div>    
+                        {% endif %}
+
+                        {% if user.is_superuser and receita.publicada == True %}
+                        
+                        <div class="row">
+                            <div class="fw-light col-md-6">    
+                                <a href="{% url 'publicar_receita' receita.id  %}">
+                                <button class="btn btn-primary col-12">
+                                    Retirar das publicadas
+                                </button>
+                                </a>
+                            </div>    
+                        </div>    
+                        {% endif %}
             </div>
 
            

@@ -22,17 +22,12 @@
               {% if not user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
               {% endif %}  
-              
-              <li><a class="dropdown-item" href="{% url 'cadastro' %}">Cadastro</a></li>
-              <li><hr class="dropdown-divider"></li>
-              
-              
+                <li><a class="dropdown-item" href="{% url 'cadastro' %}">Cadastro</a></li>
+                <li><hr class="dropdown-divider"></li>
               {% if user.is_authenticated %}
-
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               {% endif %}  
             </ul>
-
           </li>
           
           {% if user.is_authenticated  %}
@@ -42,6 +37,14 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'nova_receita' %}">Nova Receita</a></li>
+                  <!--Neste ponto se o usuário autenticado é o superusuario vamos criar uma opção no menu de listar as receitas para uma área de admin para que o mesmo possa manipulá-las, publicando, visualizando ou alguma outra funcionalidade desejada-->
+                  {% if user.is_superuser %} 
+                    <li><a class="dropdown-item" href="{% url 'lista_receitas' ' ' %}">Lista Receitas</a></li>
+                  
+                  {% else %}
+                    <li><a class="dropdown-item" href="{% url 'lista_receitas' ' ' %}">Minhas Receitas</a></li>
+                  
+                  {% endif %}
                 </ul>
               </li>
           {% endif %}    

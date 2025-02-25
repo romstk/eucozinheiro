@@ -26,7 +26,7 @@ class ReceitaForms(forms.ModelForm):
 
     #Este método faz a validação do tamanho da imagem máxima aceita no formulário e retorna um erro caso a imagem não possa ser aceita 
     def clean_imagem(self):
-        tamanho_maximo = 200 * 1024 #variável que define o tamanho máximo de arquivo que podemos fazer o upload transformando em kbytes
+        tamanho_maximo = 300 * 1024 #variável que define o tamanho máximo de arquivo que podemos fazer o upload transformando em kbytes
         arquivo = self.cleaned_data.get('imagem')  #'arquivo' é o nome do campo FileField no seu formulário
         
         if arquivo is not None and arquivo.size > tamanho_maximo: 

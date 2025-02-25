@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Listagem de Receitas </title>
+</head>
+<body>
+    
+    
+    {% include 'partials/_navbar.html' %}
+
+    <div class="container-fluid p-5 mt-5">
+        
+        
+            <div class="d-flex w-100 justify-content-between">
+                <h1 class="mb-1">Listagem de receitas </h1>
+            </div>
+
+            <p class="mb-1">Por padrão a listagem mostra as receitas <em>Não publicadas</em></p>
+            
+            <small>Clique nas opções para filtrar as receitras</small>
+            <small>
+                <small><a href="{% url 'lista_receitas' 'True' %}"class="list-group-item-action">Publicada</a></small>
+                <small><a href="{% url 'lista_receitas' 'False' %}"class="list-group-item-action list-group-item-action active" >Não Publicada</a></small>
+            </small>    
+               
+
+    
+                {% if cards %}
+
+                <!-- Primeiro grid estou montando os cabeçlhos. Abaixo com um for monto os dados com o grid do mesmo padrão-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 fw-bold">Nome</div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-8 fw-bold">Autor</div>
+                                    <div class="col-2 fw-bold">Data</div>
+                                    <div class="col-2 fw-bold">Publicada</div>
+                                </div>
+                            </div>      
+                        </div>
+
+                        <!--Grid de dados -->
+                        {% for receita in cards %}
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="{% url 'receita' receita.id %}"> {{ receita.nome }}</a>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            {{ receita.autor }}
+                                        </div>
+                                        <div class="col-2">
+                                            <!--Para exibir a data uso um filtro de data, coloco um pipe | e este pipe define que a aplicação do filtro se dará na variável anterior a ele, neste caso receita.data-->
+                                            {{ receita.data|date:"d/m/Y"  }}
+                                        </div>
+                                        <div class="col-2">{{ receita.publicada}}</div>
+                                    </div>    
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% endif %}    
+
+    </div>
+    
+</body>
+</html>

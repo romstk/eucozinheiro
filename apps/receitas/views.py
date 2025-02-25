@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from apps.receitas.models import Receita
 from django.contrib import messages
 from apps.receitas.forms import ReceitaForms
+import ast
 
 
 def index (request):
@@ -10,7 +11,7 @@ def index (request):
     receitas = Receita.objects.order_by("data").filter(publicada=True)
     return render(request, 'receitas/index.html', {"cards" : receitas})
 
-
+#recebe os dados do formulário de pesquisa trazendo do formulário o dado que deverá ser pesquisado para filtrar por nome as receitas que contenham o filtro pesquisado. Se o filtro vier vazio vai mostrar todas as receitas. 
 def filtro(request):
     if request.method == "POST": 
         filtro = request.POST.get('filtro')
@@ -77,12 +78,56 @@ def editar_receita(request, receita_id):
             return redirect(f'/receita/{receita_id}/')
     return render(request, 'receitas/editar_receita.html', {'form':form, 'receita_id': receita_id })
 
-
-
 #recebemos da urls.py o receita_id passado na url para processar a requisição através do request
 def deletar_receita(request, receita_id):
-    #aqui faço a busca da fotografia pelo id
+        #aqui faço a busca da fotografia pelo id
+        receita = Receita.objects.get(id=receita_id)
+        #se o usuário não estiver logado ou não for o proprietário não poderá deletar 
+        if not (request.user.is_authenticated) or not (receita.autor_id == request.user.id): 
+            messages.error(request, "Para apagar receita tem que estar logado e ser o propritário. ")
+            return redirect('login')
+        receita.delete()
+        messages.success(request, 'Receita apagada.')
+        return redirect('home')
+    
+
+#Recebe o id da receita e manipula o campo publicada. Se estiver True vai editar para False, se estiver False vai editar para True
+def publicar_receita(request, receita_id):
     receita = Receita.objects.get(id=receita_id)
-    receita.delete()
-    messages.success(request, 'Receita apagada.')
-    return redirect('home')
+    publicada = receita.publicada
+    #Seta o novo status invertendo o atual
+    publicada = not publicada
+    receita.publicada = publicada
+    receita.save()
+    messages.success(request, 'Status de publicação editado com sucesso! ')
+    return redirect(f'/receita/{receita_id}/')
+
+
+
+#esta função vai listar as receitas para o usuário admin(superusuario) pois com a lista poderá visualizar todas as receitas, filtrar, e mudar status de publicada para True ou False.
+def lista_receitas(request, filtro): 
+    if not (request.user.is_authenticated): 
+            messages.error(request, "Acesso a esta funcionalidade somente para usuários logadps. ")
+            return redirect('login')
+    
+    #Essa linha faz a conversão. Primeiro, ela converte a string filtro para minúsculas (.lower()) para lidar com variações como 'True', 'TRUE' ou 'true'. Em seguida, ela compara a string em minúsculas com 'true'. O resultado dessa comparação é um booleano (True ou False), que é atribuído à variável filtro.
+    filtro = filtro.lower() == 'true'   
+    
+    #Se o usuário logado for superusuário fará um filtro para todas as mensagens
+    if (request.user.is_superuser): 
+        if filtro:    
+            #Se filtro for True - mostra as receitas publicadas 
+            receitas = Receita.objects.order_by("data").filter(publicada=bool(filtro))        
+        else:
+            #Se filtro for False - mostra as receitas ainda não publicadas 
+            receitas = Receita.objects.order_by("data").filter(publicada=bool(filtro))
+    #Se o usuário não for superusuário vai buscar as mensagens somente de sua propriedade 
+    if not (request.user.is_superuser): 
+        if filtro:    
+            #Se filtro for True - mostra as receitas publicadas 
+            receitas = Receita.objects.order_by("data").filter(publicada=bool(filtro), autor=request.user)        
+        else:
+            #Se filtro for False - mostra as receitas ainda não publicadas 
+            receitas = Receita.objects.order_by("data").filter(publicada=bool(filtro), autor=request.user)
+
+    return render(request, 'receitas/lista_receitas.html', {"cards" : receitas})
