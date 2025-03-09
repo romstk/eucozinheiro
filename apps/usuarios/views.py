@@ -75,8 +75,9 @@ def cadastro(request):
             usuario.save()
             messages.success(request, "Usuário cadastrado com sucesso! Você já pode fazer o login, ")
             return redirect('login')
+    
     #este return vai ser chamado somente se o método do request for diferente de POST, ou seja, se o formulário for chamado para cadastrar novo usuário     
-    #ao renderizar o template passamos um dicionário com o form instanciado para apresentar os fields em tela 
+    #ao renderizar o template passamos um dicionário com o form instanciado para apresentar os fields em tela    
     return render(request, 'usuarios/cadastro.html', {"form": form })
 
 

@@ -2,4 +2,5 @@
     box-sizing: border-box;
     position: relative; /*Define relativo para que os filhos sejam posicionados em relação a eles, por isso colocamos relative no pai para gerar um contexto para os filhos*/
     width: 100%;
+    margin-top: 1rem;
 }

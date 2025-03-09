@@ -33,8 +33,12 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['194.163.132.241','eucozinheiro.com.br', 'www.eucozinheiro.com.br']
-ALLOWED_HOSTS = []
+#Se utilizadmos o modo debug usamos HOSTS[] senão usamos o host do servidor de produção 
+if DEBUG: 
+    ALLOWED_HOSTS = []
+else: 
+    ALLOWED_HOSTS = ['194.163.132.241','eucozinheiro.com.br', 'www.eucozinheiro.com.br']
+    
 
 # Application definition
 
@@ -79,9 +83,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'setup.wsgi.application'
 
+# Tabela de usuários do sistema que sobrescreve a auth_user padrão do Django. Criaremos a classe Usuario em models.py de nossa app usuarios. 
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+#Para fins de teste(mode DEBUG) usamos o sqlite3, para produção usaremos o mysql
+#if DEBUG: 
 
 DATABASES = {
     'default': {
@@ -89,6 +99,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#else: 
+#    DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.mysql",
+#        "NAME": "mydatabase",
+#        "USER": "mydatabaseuser",
+#        "PASSWORD": "mypassword",
+#        "HOST": "127.0.0.1",
+#        "PORT": "5432",
+#    }
+#}
 
 
 # Password validation

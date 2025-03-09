@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 from datetime import datetime
 # Criação das classes de modelo que herdarão a classe models 
@@ -16,7 +17,7 @@ class Receita(models.Model):
     #null=True, significa que o campo aceitará o valor null
     #related_name="user" , este campo serve para para facilitar a localização de tabelas e funcionalidades
     autor=models.ForeignKey(
-        to=User,
+        to=settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         null=True,
         blank=False,

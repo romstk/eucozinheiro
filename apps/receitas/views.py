@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from apps.receitas.models import Receita
 from django.contrib import messages
 from apps.receitas.forms import ReceitaForms
-import ast
+
 
 
 def index (request):
@@ -11,6 +11,11 @@ def index (request):
     receitas = Receita.objects.order_by("data").filter(publicada=True)
     return render(request, 'receitas/index.html', {"cards" : receitas})
 
+def termos_uso(request):
+    return render(request, 'termos_uso.html')
+
+def politica_privacidade(request):
+    return render(request, 'politica_privacidade.html')
 #recebe os dados do formulário de pesquisa trazendo do formulário o dado que deverá ser pesquisado para filtrar por nome as receitas que contenham o filtro pesquisado. Se o filtro vier vazio vai mostrar todas as receitas. 
 def filtro(request):
     if request.method == "POST": 

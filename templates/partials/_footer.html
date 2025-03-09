@@ -1,14 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static '/css/rodape/rodape-texto.css' %}">
-</head>
-
-<footer class="rodape">
-    <div class="rodape__icones">
-       
+<footer class="bg-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Contato</h5>
+                <p>contato@eucozinheiro.com.br</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Links úteis</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'politica_privacidade' %}" target="_blank">Política de privacidade</a></li>
+                    <li><a href="{% url 'termos_uso' %}" target="_blank">Termos de uso</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Redes sociais</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">&copy; 2024 Eu Cozinheiro. Todos os direitos reservados. Desenvolvido por Ricardo Otomar Maria da Silva.</p>
     </div>
-    <p class="rodape__texto">Desenvolvido por Ricardo Silva</p>
 </footer>
